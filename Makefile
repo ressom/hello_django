@@ -9,5 +9,11 @@ clean:
 	rm -rf theme/__pycache__
 	rm -rf theme/static_src/node_modules
 
-run: .venv/bin/activate
+run-django:
 	.venv/bin/python manage.py runserver
+
+run-tailwind:
+	.venv/bin/python manage.py tailwind start
+
+run: .venv/bin/activate
+	make -j 2 run-tailwind run-django
