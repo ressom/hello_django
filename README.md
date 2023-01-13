@@ -7,6 +7,16 @@
 * See [requirements.txt](./requirements.txt)
 * NodeJS >=12 (for [django-tailwind](https://django-tailwind.readthedocs.io))
 
+## HowTo Run
+ - Check out the project
+ - At a command prompt run `make superuser`
+   - This will install dependencies into `./.venv`, create an empty local dB, run migrations, and prompt to create the `admin` user
+ - At a command prompt run `make run`
+   - This will start server processes
+ - Login as Superuser - [http://127.0.0.1:8000/admin/login/](http://127.0.0.1:8000/admin/login/)
+ - Create a application User then log out of `admin` account
+ - Login as application User - [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
 ## Project Task Checklist
 - [X] Initial GIT/GH project setup
 - [X] Initial Python/Django setup

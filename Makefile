@@ -9,6 +9,15 @@ clean:
 	rm -rf theme/__pycache__
 	rm -rf theme/static_src/node_modules
 
+mrproper: clean
+	rm -rf ./db.sqlite3
+
+migrate: .venv/bin/activate
+	.venv/bin/python manage.py migrate
+
+superuser: migrate
+	.venv/bin/python manage.py createsuperuser
+
 run-django:
 	.venv/bin/python manage.py runserver
 
